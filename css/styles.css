@@ -1,30 +1,8 @@
-/* Ensure body and html elements take full height */
+/* General Body Styles */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-/* Container to hold the page content and footer */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Ensure main content takes available space */
-main {
-    flex: 1;
-    background-color: rgba(244, 244, 244, 0.8); /* Semi-transparent background */
-    padding: 40px 20px;
-    text-align: center;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* General Body Styles */
-body {
     font-family: Arial, sans-serif;
     background-image: url('../img/background.jpg');
     background-size: cover;
@@ -41,7 +19,6 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation Styles */
 nav {
     text-align: center;
 }
@@ -60,64 +37,18 @@ nav a:hover {
     color: #ddd;
 }
 
-
-/* Login Section Styles */
-.login-section {
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ddd;
+/* Main content styles */
+main {
+    background-color: rgba(244, 244, 244, 0.8);
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
 }
 
-.login-section h2 {
-    margin-bottom: 20px;
-}
-
-.login-section label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.login-section input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.login-section a {
-    display: block;
-    margin-bottom: 10px;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.login-section a:hover {
-    text-decoration: underline;
-}
-
-.login-section button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.login-section button:hover {
-    background-color: #0056b3;
-}
-
-/* Registration Section Styles */
-.registration-section {
+/* Login Section Styles */
+.login-section, .registration-section {
     background-color: white;
     padding: 20px;
     border: 1px solid #ddd;
@@ -129,16 +60,16 @@ nav a:hover {
     text-align: center;
 }
 
-.registration-section h2 {
+.login-section h2, .registration-section h2 {
     margin-bottom: 20px;
 }
 
-.registration-section label {
+.login-section label, .registration-section label {
     display: block;
     margin: 10px 0 5px;
 }
 
-.registration-section input, .registration-section select {
+.login-section input, .registration-section input, .registration-section select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -146,8 +77,9 @@ nav a:hover {
     border-radius: 4px;
 }
 
-.registration-section button {
-    padding: 10px 20px;
+.login-section button, .registration-section button {
+    width: 100%;
+    padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -155,8 +87,19 @@ nav a:hover {
     cursor: pointer;
 }
 
-.registration-section button:hover {
+.login-section button:hover, .registration-section button:hover {
     background-color: #0056b3;
+}
+
+.login-section a {
+    display: block;
+    margin-bottom: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-section a:hover {
+    text-decoration: underline;
 }
 
 /* Slideshow Styles */
@@ -186,9 +129,6 @@ footer {
     text-align: center;
     padding: 1em 0;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
 footer p {
@@ -229,5 +169,4 @@ footer .social-media a:hover {
     .slideshow-container {
         max-width: 100%;
     }
-    .container.demo {margin-top:4em}
 }

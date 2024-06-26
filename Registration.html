@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Task Management App</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/countries.js" defer></script>
+    <script src="js/validation.js" defer></script>
 </head>
 <body>
-
     <!-- Header -->
     <header>
         <nav>
@@ -23,70 +24,41 @@
         </nav>
     </header>
 
-    <!-- Main content -->
+    <!-- Registration section -->
     <main>
         <section class="registration-section">
             <h2>Register</h2>
-            <form action="/register" method="post" id="registrationForm">
-                <label for="firstname">First Name:</label><br>
-                <input type="text" id="firstname" name="firstname" required><br>
+            <form name="registration" onsubmit="return validateForm()" action="submit.html">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
 
-                <label for="lastname">Last Name:</label><br>
-                <input type="text" id="lastname" name="lastname" required><br>
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
 
-                <label for="dob">Date of Birth (dd/mm/yyyy):</label><br>
-                <input type="text" id="dob" name="dob" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="dd/mm/yyyy" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-                <label for="age">Age:</label><br>
-                <input type="number" id="age" name="age" min="18" max="120" required><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
 
-                <label>Gender:</label><br>
-                <input type="radio" id="male" name="gender" value="male" required>
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female" required>
-                <label for="female">Female</label><br>
+                <label for="country">Country:</label>
+                <select id="country" name="country" required></select>
 
-                <label for="phone">Phone Number:</label><br>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br>
+                <label for="state">State:</label>
+                <select id="state" name="state" required></select>
 
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br>
-
-                <div class="form-group">
-                    <label for="country">Select Country:</label><br>
-                    <select id="country" name="country" class="form-control" required>
-                        <option value="">Select Country</option>
-                    </select><br>
-                </div>
-
-                <div class="form-group">
-                    <label for="state">Select State:</label><br>
-                    <select id="state" name="state" class="form-control" required>
-                        <option value="">Select State</option>
-                    </select><br>
-                </div>
-
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required><br>
-
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br>
-
-                <label for="confirmPassword">Confirm Password:</label><br>
-                <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+                <label for="city">City:</label>
+                <select id="city" name="city" required></select>
 
                 <button type="submit">Register</button>
             </form>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer with contact information -->
     <footer>
         <p>Contact: contact@taskmanagementapp.com</p>
         <p>&copy; 2024 Task Management App. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
 </body>
 </html>
