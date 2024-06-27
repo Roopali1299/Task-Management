@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <title>Contact Us - Task Management App</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav>
-            <table align="center" width="100%">
-                <tr>
-                    <td align="center" style="padding: 10px;"><a href="Home.html">Home</a></td>
-                    <td align="center" style="padding: 10px;"><a href="Login.html">Login</a></td>
-                    <td align="center" style="padding: 10px;"><a href="Registration.html">Register</a></td>
-                    <td align="center" style="padding: 10px;"><a href="AboutUs.html">About Us</a></td>
-                    <td align="center" style="padding: 10px;"><a href="ContactUs.html">Contact Us</a></td>
-                </tr>
-            </table>
+        <nav class="navbar">
+            <img src="img/LOGO2.png" alt="Logo">
+            <div>
+                <a href="Home.html">HOME</a>
+                <a href="Login.html">SIGN IN</a>
+                <a href="Registration.html">SIGN UP</a>               
+                <a href="AboutUS.html">ABOUT US</a>
+            </div>
         </nav>
     </header>
 
@@ -25,18 +29,30 @@
     <main>
         <h1>Contact Us</h1>
         <p>We would love to hear from you! If you have any questions, feedback, or concerns, please reach out to us.</p>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
+        <section class="contact-section">
+            <form id="contactForm">
+                <table align="center" width="100%">
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" id="name" name="name"></td>
+                        <td><div id="nameError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" name="email"></td>
+                        <td><div id="emailError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="message">Message:</label></td>
+                        <td><textarea id="message" name="message"></textarea></td>
+                        <td><div id="messageError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><button type="submit">Submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </section>
     </main>
 
     <!-- Footer with contact information -->
@@ -44,5 +60,7 @@
         <p>Contact: contact@taskmanagementapp.com</p>
         <p>&copy; 2024 Task Management App. All rights reserved.</p>
     </footer>
+
+    <script src="js/validation.js" ></script>
 </body>
 </html>

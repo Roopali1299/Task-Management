@@ -5,52 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Task Management App</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/countries.js" defer></script>
-    <script src="js/validation.js" defer></script>
+    <style>
+        .gender-row {
+            display: flex;
+            align-items: center;
+        }
+        .gender-row input[type="radio"] {
+            margin-left: 10px;
+        }
+        .gender-label {
+            margin-right: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .success-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav>
-            <table align="center" width="100%">
-                <tr>
-                    <td align="center" style="padding: 10px;"><a href="Home.html">Home</a></td>
-                    <td align="center" style="padding: 10px;"><a href="Login.html">Login</a></td>
-                    <td align="center" style="padding: 10px;"><a href="Registration.html">Register</a></td>
-                    <td align="center" style="padding: 10px;"><a href="AboutUs.html">About Us</a></td>
-                    <td align="center" style="padding: 10px;"><a href="ContactUs.html">Contact Us</a></td>
-                </tr>
-            </table>
+        <nav class="navbar">
+            <img src="img/LOGO2.png" alt="Logo">
+            <div>
+                <a href="Home.html">HOME</a>
+                <a href="Login.html">SIGN IN</a>
+                <a href="AboutUs.html">ABOUT US</a>
+                <a href="ContactUs.html">CONTACT US</a>
+            </div>
         </nav>
     </header>
 
     <!-- Registration section -->
     <main>
         <section class="registration-section">
-            <h2>Register</h2>
-            <form name="registration" onsubmit="return validateForm()" action="submit.html">
-                <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="fname" required>
-
-                <label for="lname">Last Name:</label>
-                <input type="text" id="lname" name="lname" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <label for="country">Country:</label>
-                <select id="country" name="country" required></select>
-
-                <label for="state">State:</label>
-                <select id="state" name="state" required></select>
-
-                <label for="city">City:</label>
-                <select id="city" name="city" required></select>
-
-                <button type="submit">Register</button>
+            <h2 style="color: purple;"><b>SIGN UP</b></h2>
+            <form id="registrationForm">
+                <table align="center" width="100%">
+                    <tr>
+                        <td><label for="fname">Firstname:</label></td>
+                        <td><input type="text" id="fname" name="fname"></td>
+                        <td><div id="fnameError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lname">Lastname:</label></td>
+                        <td><input type="text" id="lname" name="lname"></td>
+                        <td><div id="lnameError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">Date of Birth:</label></td>
+                        <td><input type="date" id="dob" name="dob"></td>
+                        <td><div id="dobError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="age">Age:</label></td>
+                        <td><input type="number" id="age" name="age"></td>
+                        <td><div id="ageError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="gender-label"><label>Gender:</label></td>
+                        <td class="gender-row">
+                            <input type="radio" id="male" name="gender" value="male">Male
+                            <input type="radio" id="female" name="gender" value="female">Female
+                            <input type="radio" id="other" name="gender" value="other">Other
+                        </td>
+                        <td><div id="genderError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phn">Phone Number:</label></td>
+                        <td><input type="text" id="phn" name="phn"></td>
+                        <td><div id="phnError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" name="email"></td>
+                        <td><div id="emailError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td><input type="text" id="address" name="address"></td>
+                        <td><div id="addressError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="state">State:</label></td>
+                        <td><select id="state" name="state">
+                                <option value="">Select State</option>
+                            </select></td>
+                        <td><div id="stateError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="city">City:</label></td>
+                        <td><select id="city" name="city">
+                                <option value="">Select City</option>
+                            </select></td>
+                        <td><div id="cityError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="username">Username:</label></td>
+                        <td><input type="text" id="username" name="username"></td>
+                        <td><div id="usernameError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" id="password" name="password"></td>
+                        <td><div id="passwordError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="confirm_password">Confirm Password:</label></td>
+                        <td><input type="password" id="confirm_password" name="confirm_password"></td>
+                        <td><div id="confirmPasswordError" class="error"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><button type="submit">Register</button></td>
+                    </tr>
+                </table>
             </form>
         </section>
     </main>
@@ -60,5 +140,8 @@
         <p>Contact: contact@taskmanagementapp.com</p>
         <p>&copy; 2024 Task Management App. All rights reserved.</p>
     </footer>
+
+    <script src="js/validation.js" defer></script>
+    <script src="js/cascading-dropdown.js" defer></script>
 </body>
 </html>

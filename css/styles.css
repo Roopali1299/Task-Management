@@ -2,44 +2,49 @@
 html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     font-family: Arial, sans-serif;
-    background-image: url('../img/background.jpg');
+    background-image: url('../img/back5.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: #333;
+    justify-content: center;
 }
 
 /* Header Styles */
 header {
-    background-color: #333;
+    background-color:  #7f7aca;
     color: white;
     padding: 1em 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-    text-align: center;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #c179d5;
 }
-
-nav a {
+.navbar img {
+    height: 100px;
+}
+.navbar a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 14px 20px;
+    display: inline-block;
+    text-align: center;
 }
-
-nav a:hover {
-    text-decoration: underline;
-    background-color: #444;
-    color: #ddd;
+.navbar a:hover {
+    background-color: #ddd;
+    color: rgb(81, 170, 238);
 }
 
 /* Main content styles */
 main {
-    background-color: rgba(244, 244, 244, 0.8);
+    background-color: rgba(255, 255, 255, 0);
     padding: 40px 20px;
     text-align: center;
     margin: 20px;
@@ -48,47 +53,82 @@ main {
 }
 
 /* Login Section Styles */
-.login-section, .registration-section {
-    background-color: white;
+.login-section, .contact-section {
+    background-color: rgba(255, 255, 255, 0);
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 25%;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+.registration-section {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px; /* Adjust padding for spacing inside the section */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Adjust width to desired percentage */
     max-width: 600px;
     margin: auto;
     text-align: center;
 }
 
+.registration-section form {
+    display: grid;
+    gap: 10px; /* Adjust gap between form elements */
+}
+
+
+
 .login-section h2, .registration-section h2 {
     margin-bottom: 20px;
 }
 
-.login-section label, .registration-section label {
+.login-section label, .contact-section label{
     display: block;
     margin: 10px 0 5px;
+   
+    
 }
-
-.login-section input, .registration-section input, .registration-section select {
+.registration-section label {
+    width: 140px;
+    display: inline-block;
+    margin: 10px 0 5px;
+    padding-left: 50px;
+    text-align: left;
+    
+}
+.login-section input, .contact-section input{
     width: 100%;
-    padding: 8px;
+    padding: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid lightblue;
     border-radius: 4px;
+   
 }
-
-.login-section button, .registration-section button {
+.registration-section input, .registration-section select {
     width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid lightblue;
+    border-radius: 4px;
+    outline: none;
+}
+.login-section button, .registration-section button, .contact-section button {
+    width: 50%;
     padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #b174c1;
+    color: rgb(251, 250, 253);
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
-
-.login-section button:hover, .registration-section button:hover {
-    background-color: #0056b3;
+/* styles.css */
+.login-section button:hover, .registration-section button:hover, .contact-section button {
+    background-color: #91e097;
 }
 
 .login-section a {
@@ -124,7 +164,7 @@ main {
 
 /* Footer Styles */
 footer {
-    background-color: #333;
+    background-color: #7f7aca;
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -155,18 +195,4 @@ footer .social-media a:hover {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
-    nav a {
-        display: block;
-        padding: 10px 0;
-    }
 
-    main {
-        margin: 10px;
-        padding: 20px;
-    }
-
-    .slideshow-container {
-        max-width: 100%;
-    }
-}
