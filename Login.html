@@ -23,35 +23,36 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: rgb(157, 166, 233)">
     <!-- Header -->
     <header>
         <nav class="navbar">
             <img src="img/LOGO2.png" alt="Logo">
+            <p style="margin-left: -690px; color: rgb(184, 237, 238); font-weight: bold;"><strong>TASKMASTER</strong></p>
             <div>
-                <a href="Home.html">SIGN IN</a>
-                <a href="Registration.html">SIGN UP</a>
-                <a href="AboutUs.html">ABOUT US</a>
-                <a href="ContactUs.html">CONTACT US</a>
+                <a href="Home.html">Home</a>
+                <a href="Registration.html">Sign up</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
             </div>
         </nav>
     </header>
 
     <!-- Login section -->
-    <main>
+    <br>
         <section class="login-section">
             <h2 style="color: purple;"><b>SIGN IN</b></h2>
             <form id="loginForm">
                 <div class="input-row">
-                    <label for="username">Username:</label>
+                    <label for="username">Username</label>
                     <input type="text" id="username" name="username">
-                    <div id="usernameError" class="error"></div>
+                    <div id="usernameError" class="error">Username is required</div>
                 </div>
 
                 <div class="input-row">
-                    <label for="password">Password:</label>
+                    <label for="password">Password</label>
                     <input type="password" id="password" name="password">
-                    <div id="passwordError" class="error"></div>
+                    <div id="passwordError" class="error">Password is required</div>
                 </div>
 
                 <div class="form-row">
@@ -61,20 +62,79 @@
                     </div>
                     <a href="#" class="right">Forgot Password?</a>
                 </div>
-
                 <button type="submit">Login</button>
                 <p>Don't have an account? </p>
                 <a href="Registration.html">Sign Up</a>
             </form>
         </section>
-    </main>
+    </br>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Selecting elements from the DOM 
+            const loginForm = document.getElementById('loginForm');
+            const usernameField = document.getElementById('username');
+            const passwordField = document.getElementById('password');
 
-    <!-- Footer with contact information -->
-    <footer>
-        <p>Contact: contact@taskmanagementapp.com</p>
-        <p>&copy; 2024 Task Management App. All rights reserved.</p>
-    </footer>
-    <script src="js/validation.js" defer></script>
+            // Event handler for username field's focusout event
+            usernameField.addEventListener('focusout', function() {
+                validateUsername();
+            });
+
+            // Event handler for password field's focusout event
+            passwordField.addEventListener('focusout', function() {
+                validatePassword();
+            });
+
+            // Event listener for form submission
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevents the default form submission behavior
+
+                // Validate fields before submitting
+                if (validateUsername() && validatePassword()) {
+                    // If both username and password are valid
+                    alert('Login successful!'); // Display an alert indicating successful login
+                    loginForm.reset(); // Optional: Reset form fields
+                }
+            });
+
+            // Function to validate the username field
+            function validateUsername() {
+                const username = usernameField.value.trim(); // Gets the trimmed value of the username input
+                const errorElement = document.getElementById('usernameError'); // Selects the error message element for username
+
+                if (username === '') {
+                    errorElement.style.display = 'block'; // Displays the error message
+                    return false; // Returns false to indicate validation failure
+                } else {
+                    // If username is not empty
+                    errorElement.style.display = 'none'; // Hides the error message
+                    return true; // Returns true to indicate validation success
+                }
+            }
+
+            // Function to validate the password field
+            function validatePassword() {
+                const password = passwordField.value.trim(); // Gets the trimmed value of the password input
+                const errorElement = document.getElementById('passwordError'); // Selects the error message element for password
+
+                if (password === '') {
+                    errorElement.style.display = 'block'; // Displays the error message
+                    return false; // Returns false to indicate validation failure
+                } else {
+                    // If password is not empty
+                    errorElement.style.display = 'none'; // Hides the error message
+                    return true; // Returns true to indicate validation success
+                }
+            }
+        });
+    </script>
 </body>
 </html>
+<!-- Footer with contact information -->
+<footer align="center" style="background-color: blueviolet;border-radius: 5px; padding: 20px;">
+    <p style="color: white;">Contact: contact@taskmanagementapp.com</p>
+    <p style="color: white;">&copy; 2024 Task Management App. All rights reserved.</p>
+</footer>
+
 

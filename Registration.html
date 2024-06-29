@@ -34,97 +34,141 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: rgb(157, 166, 233)">
     <!-- Header -->
     <header>
         <nav class="navbar">
             <img src="img/LOGO2.png" alt="Logo">
+            <p style="margin-left: -690px; color: rgb(184, 237, 238); font-weight: bold;"><strong>TASKMASTER</strong></p>
             <div>
-                <a href="Home.html">HOME</a>
-                <a href="Login.html">SIGN IN</a>
-                <a href="AboutUs.html">ABOUT US</a>
-                <a href="ContactUs.html">CONTACT US</a>
+                <a href="Home.html">Home</a>
+                <a href="Login.html">Sign in</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
             </div>
         </nav>
     </header>
+    <br>
 
     <!-- Registration section -->
-    <main>
+    
         <section class="registration-section">
             <h2 style="color: purple;"><b>SIGN UP</b></h2>
             <form id="registrationForm">
-                <table align="center" width="100%">
+                <table align="center" width="75%">
                     <tr>
-                        <td><label for="fname">Firstname:</label></td>
+                        <td><label for="fname">Firstname</label></td>
                         <td><input type="text" id="fname" name="fname"></td>
+                    </tr>
+                    <tr><td></td>
                         <td><div id="fnameError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="lname">Lastname:</label></td>
+                        <td><label for="lname">Lastname</label></td>
                         <td><input type="text" id="lname" name="lname"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="lnameError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="dob">Date of Birth:</label></td>
-                        <td><input type="date" id="dob" name="dob"></td>
+                        <td><label for="dob">Date of Birth</label></td>
+                        <td><input type="date" id="dob" name="dob" max="" onchange="calculateAge()"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="dobError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="age">Age:</label></td>
-                        <td><input type="number" id="age" name="age"></td>
+                        <td><label for="age">Age</label></td>
+                        <td><input type="number" id="age" name="age" readonly></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="ageError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td class="gender-label"><label>Gender:</label></td>
+                        <td class="gender-label"><label>Gender</label></td>
                         <td class="gender-row">
-                            <input type="radio" id="male" name="gender" value="male">Male
-                            <input type="radio" id="female" name="gender" value="female">Female
-                            <input type="radio" id="other" name="gender" value="other">Other
+                            <input type="radio" id="male" name="gender" value="male" required>Male
+                            <input type="radio" id="female" name="gender" value="female" required>Female
+                            <input type="radio" id="other" name="gender" value="other" required>Other
                         </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div id="genderError" class="error"></div></td>
+                    </tr>                    
+                    <tr>
+                        <td></td>
                         <td><div id="genderError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="phn">Phone Number:</label></td>
+                        <td><label for="phn">Phone Number</label></td>
                         <td><input type="text" id="phn" name="phn"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="phnError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="email">Email:</label></td>
+                        <td><label for="email">Email</label></td>
                         <td><input type="email" id="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="emailError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="address">Address:</label></td>
+                        <td><label for="address">Address</label></td>
                         <td><input type="text" id="address" name="address"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="addressError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="state">State:</label></td>
+                        <td><label for="state">State</label></td>
                         <td><select id="state" name="state">
                                 <option value="">Select State</option>
                             </select></td>
+                        </tr>
+                        <tr>
+                            <td></td>    
                         <td><div id="stateError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="city">City:</label></td>
+                        <td><label for="city">City</label></td>
                         <td><select id="city" name="city">
                                 <option value="">Select City</option>
                             </select></td>
+                        </tr>
+                        <tr>
+                            <td></td>    
                         <td><div id="cityError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="username">Username:</label></td>
+                        <td><label for="username">Username</label></td>
                         <td><input type="text" id="username" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="usernameError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="password">Password:</label></td>
+                        <td><label for="password">Password</label></td>
                         <td><input type="password" id="password" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="passwordError" class="error"></div></td>
                     </tr>
                     <tr>
-                        <td><label for="confirm_password">Confirm Password:</label></td>
+                        <td><label for="confirm_password">Confirm Password</label></td>
                         <td><input type="password" id="confirm_password" name="confirm_password"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="confirmPasswordError" class="error"></div></td>
                     </tr>
                     <tr>
@@ -133,15 +177,250 @@
                 </table>
             </form>
         </section>
-    </main>
+        <br>
+    </body>
 
-    <!-- Footer with contact information -->
-    <footer>
-        <p>Contact: contact@taskmanagementapp.com</p>
-        <p>&copy; 2024 Task Management App. All rights reserved.</p>
-    </footer>
     <script src ="js/cascading-dropdown.js"></script>
     <script src="js/validation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registrationForm = document.getElementById('registrationForm');
+
+            // Add blur event listeners to each input field
+            document.getElementById('fname').addEventListener('blur', validateFirstname);
+            document.getElementById('lname').addEventListener('blur', validateLastname);
+            document.getElementById('dob').addEventListener('blur', validateDob);
+            document.getElementById('age').addEventListener('blur', validateAge);
+            document.getElementsByName('gender').forEach(input => input.addEventListener('blur', validateGender));
+            document.getElementById('phn').addEventListener('blur', validatePhn);
+            document.getElementById('email').addEventListener('blur', validateEmail);
+            document.getElementById('address').addEventListener('blur', validateAddress);
+            document.getElementById('state').addEventListener('blur', validateState);
+            document.getElementById('city').addEventListener('blur', validateCity);
+            document.getElementById('username').addEventListener('blur', validateUsername);
+            document.getElementById('password').addEventListener('blur', validatePassword);
+            document.getElementById('confirm_password').addEventListener('blur', validateConfirmPassword);
+
+            registrationForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                clearErrors();
+                let isValid = validateForm();
+                if (isValid) {
+                    showRegistrationSuccessPopup();
+                    registrationForm.reset();
+                }
+            });
+
+            function validateFirstname() {
+                 const fname = document.getElementById('fname');
+                let trimmedValue = fname.value.trim();
+                 if (!/^[A-Za-z]+$/.test(trimmedValue)) {
+                showError('fnameError', 'First name should contain only alphabetic characters');
+                return false;
+                } else {
+                // Capitalize first letter
+                fname.value = trimmedValue.charAt(0).toUpperCase() + trimmedValue.slice(1);
+                clearError('fnameError');
+            return true;
+        }
+    }
+
+    function validateLastname() {
+        const lname = document.getElementById('lname');
+        let trimmedValue = lname.value.trim();
+        if (!/^[A-Za-z]+$/.test(trimmedValue)) {
+            showError('lnameError', 'Last name should contain only alphabetic characters');
+            return false;
+        } else {
+            // Capitalize first letter
+            lname.value = trimmedValue.charAt(0).toUpperCase() + trimmedValue.slice(1);
+            clearError('lnameError');
+            return true;
+        }
+    }  
+
+            function validateDob() {
+                const dob = document.getElementById('dob');
+                if (dob.value.trim() === '') {
+                    showError('dobError', 'Date of birth is required');
+                    return false;
+                } else {
+                    clearError('dobError');
+                    return true;
+                }
+            }
+
+            function validateAge() {
+                const age = document.getElementById('age');
+                if (age.value.trim() === '' || age.value < 0) {
+                    showError('ageError', 'Valid age is required');
+                    return false;
+                } else {
+                    clearError('ageError');
+                    return true;
+                }
+            }
+
+            function validateGender() {
+    const genderInputs = document.querySelectorAll('input[name="gender"]');
+    let isChecked = false;
+    
+    genderInputs.forEach(input => {
+        if (input.checked) {
+            isChecked = true;
+        }
+    });
+    
+    if (!isChecked) {
+        showError('genderError', 'Gender is required');
+        return false;
+    } else {
+        clearError('genderError');
+        return true;
+    }
+}
+
+
+
+
+
+            function validatePhn() {
+                const phn = document.getElementById('phn');
+                if (phn.value.trim() === '' || !/^[6-9]\d{9}$/.test(phn.value.trim())) {
+                    showError('phnError', 'Valid phone number is required');
+                    return false;
+                } else {
+                    clearError('phnError');
+                    return true;
+                }
+            }
+
+            function validateEmail() {
+                const email = document.getElementById('email');
+                if (email.value.trim() === '' || !isValidEmail(email.value)) {
+                    showError('emailError', 'Valid email is required');
+                    return false;
+                } else {
+                    clearError('emailError');
+                    return true;
+                }
+            }
+
+            function validateAddress() {
+                const address = document.getElementById('address');
+                if (address.value.trim() === '') {
+                    showError('addressError', 'Address is required');
+                    return false;
+                } else {
+                    clearError('addressError');
+                    return true;
+                }
+            }
+
+            function validateState() {
+                const state = document.getElementById('state');
+                if (state.value.trim() === '') {
+                    showError('stateError', 'State is required');
+                    return false;
+                } else {
+                    clearError('stateError');
+                    return true;
+                }
+            }
+
+            function validateCity() {
+                const city = document.getElementById('city');
+                if (city.value.trim() === '') {
+                    showError('cityError', 'City is required');
+                    return false;
+                } else {
+                    clearError('cityError');
+                    return true;
+                }
+            }
+
+            function validateUsername() {
+                const username = document.getElementById('username');
+                if (username.value.trim() === '') {
+                    showError('usernameError', 'Username is required');
+                    return false;
+                } else {
+                    clearError('usernameError');
+                    return true;
+                }
+            }
+
+            function validatePassword() {
+                const password = document.getElementById('password');
+                if (password.value.trim() === '' || !isValidPassword(password.value)) {
+                    showError('passwordError', 'Password must be at least 8 characters long and contain at least one number, one uppercase and one lowercase letter');
+                    return false;
+                } else {
+                    clearError('passwordError');
+                    return true;
+                }
+            }
+
+            function validateConfirmPassword() {
+                const confirmPassword = document.getElementById('confirm_password');
+                const password = document.getElementById('password');
+                if (confirmPassword.value.trim() === '' || confirmPassword.value !== password.value) {
+                    showError('confirmPasswordError', 'Passwords do not match');
+                    return false;
+                } else {
+                    clearError('confirmPasswordError');
+                    return true;
+                }
+            }
+
+            function isValidEmail(email) {
+                return /^\S+@\S+\.\S+$/.test(email);
+            }
+
+            function isValidPassword(password) {
+                return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
+            }
+
+            function showError(elementId, message) {
+                const errorElement = document.getElementById(elementId);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+
+            function clearError(elementId) {
+                const errorElement = document.getElementById(elementId);
+                errorElement.textContent = '';
+                errorElement.style.display = 'none';
+            }
+
+            function clearErrors() {
+                const errorElements = document.querySelectorAll('.error');
+                errorElements.forEach(element => {
+                    element.textContent = '';
+                    element.style.display = 'none';
+                });
+            }
+            
+
+            function showRegistrationSuccessPopup() {
+                const popup = document.createElement('div');
+                popup.textContent = 'Registration successful! You can now login with your credentials.';
+                popup.classList.add('success-popup');
+                document.body.appendChild(popup);
+
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 3000);
+            }
+        });
+    </script>
+    <script src="js/validation.js" ></script>
 </body>
 </html>
+    <!-- Footer with contact information -->
+    <footer align="center" style="background-color: blueviolet;border-radius: 5px; padding: 20px;">
+        <p style="color: white;">Contact: contact@taskmanagementapp.com</p>
+        <p style="color: white;">&copy; 2024 Task Management App. All rights reserved.</p>
+    </footer>
+
 

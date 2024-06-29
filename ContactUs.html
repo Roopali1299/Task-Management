@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Task Management App</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
@@ -11,16 +12,17 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: rgb(200, 121, 183);">
     <!-- Header -->
     <header>
         <nav class="navbar">
             <img src="img/LOGO2.png" alt="Logo">
+            <p style="margin-left: -690px; color: rgb(184, 237, 238); font-weight: bold;"><strong>TASKMASTER</strong></p>
             <div>
-                <a href="Home.html">HOME</a>
-                <a href="Login.html">SIGN IN</a>
-                <a href="Registration.html">SIGN UP</a>               
-                <a href="AboutUS.html">ABOUT US</a>
+                <a href="Home.html">Home</a>
+                <a href="Login.html">Sign in</a>
+                <a href="Registration.html">Sign up</a>               
+                <a href="AboutUS.html">About us</a>
             </div>
         </nav>
     </header>
@@ -34,16 +36,25 @@
                     <tr>
                         <td><label for="name">Name:</label></td>
                         <td><input type="text" id="name" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="nameError" class="error"></div></td>
                     </tr>
                     <tr>
                         <td><label for="email">Email:</label></td>
                         <td><input type="email" id="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="emailError" class="error"></div></td>
                     </tr>
                     <tr>
                         <td><label for="message">Message:</label></td>
                         <td><textarea id="message" name="message"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td><div id="messageError" class="error"></div></td>
                     </tr>
                     <tr>
@@ -53,11 +64,12 @@
             </form>
         </section>
     </main>
-    <!-- Footer with contact information -->
-    <footer>
-        <p>Contact: contact@taskmanagementapp.com</p>
-        <p>&copy; 2024 Task Management App. All rights reserved.</p>
-    </footer>
+
     <script src="js/validation.js" ></script>
 </body>
 </html>
+    <!-- Footer with contact information -->
+    <footer align="center" style="background-color: blueviolet;border-radius: 5px;padding: 20px;">
+        <p style="color: white;">Contact: contact@taskmanagementapp.com</p>
+        <p style="color: white;">&copy; 2024 Task Management App. All rights reserved.</p>
+    </footer>
